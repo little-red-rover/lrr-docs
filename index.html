@@ -15,6 +15,11 @@
             src: url('./_fonts/Randomn4yy-Regular.ttf');
         }
 
+        @font-face {
+            font-family: 'Manrope';
+            src: url('./_fonts/Manrope-VariableFont_wght.ttf');
+        }
+
         .cover-main {
             font-family: 'Randomn4yy', monospace;
         }
@@ -24,9 +29,13 @@
         }
 
         :root {
-            --base-background-color: #080808;
+            --base-background-color: #141414;
 
             --theme-lightness: 100%;
+
+            --base-font-family: "Manrope", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --base-font-size: 16px;
+            --base-font-weight: 400;
 
             /* Monochrome shades (darker) and tints (lighter) */
             --mono-tint3: hsl(var(--mono-hue), var(--mono-saturation), 20%);
@@ -42,20 +51,30 @@
             --sidebar-nav-link-border-color: transparent;
             --sidebar-nav-link-border-color--active: var(--theme-color);
             --sidebar-nav-link-border-width: 0 4px 0 0;
-            --sidebar-nav-link-color--active: var(--theme-color);
+            --sidebar-nav-link-color--active: var(--mono-shade1);
             --sidebar-nav-link-margin: 0 -25px 0 0;
             --sidebar-nav-link-text-decoration: none;
             --sidebar-nav-link-text-decoration--active: none;
             --sidebar-nav-link-text-decoration--hover: underline;
 
+            --heading-h1-font-size: 4em;
+            --heading-h1-margin: 0px;
             --heading-font-family: 'Randomn4yy', monospace;
-            --heading-h1-font-size: var(--font-size-xxxl);
-            --heading-h2-font-size: var(--font-size-xxl);
+            --heading-h2-font-size: 2.5em;
             --heading-h3-font-size: var(--font-size-xl);
-            --heading-h4-font-size: var(--font-size-m);
-            --heading-h5-font-size: var(--font-size-s);
-            --heading-h6-font-size: var(--font-size-xs);
-            --heading-margin: 2.5rem -0.1em -0.25em;
+            --heading-h4-font-size: var(--font-size-l);
+            --heading-h5-font-size: var(--font-size-m);
+            --heading-h6-font-size: var(--font-size-s);
+
+            --code-theme-background: black;
+
+            --table-cell-border-color: var(--mono-tint1);
+            --table-body-border-color: var(--table-cell-border-color);
+            --table-head-border-color: var(--table-cell-border-color);
+            --table-body-border-width: 1px;
+            --table-cell-border-width: 1px;
+            --table-head-border-width: 1px;
+            --table-row-odd-background: none;
         }
     </style>
 </head>
@@ -71,22 +90,6 @@
             },
             subMaxLevel: 2,
             maxLevel: 4,
-            plugins: [
-                function add_padding(hook, vm) {
-                    var header = ['<br>'].join('');
-                    var footer = [
-                        '<hr/>',
-                        '<br>',
-                    ].join('');
-                    hook.afterEach(function (html) {
-                        return (
-                            header +
-                            html +
-                            footer
-                        );
-                    });
-                },
-            ],
         }
     </script>
     <!-- Docsify v4 -->

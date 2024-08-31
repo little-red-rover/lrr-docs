@@ -1,4 +1,3 @@
-- [Hello!](/)
-- [Quick start](quickstart.md "LRR | Quickstart")
-- [Developing](developing/ "LRR | Developing")
-    - [Linux survival guide](developing/linux.md "LRR | testing")
+* Getting Started
+    - [Assembly](assembly.md "Assembly | Little Red Rover")
+    - [Software Installation](software_installation.md "Quickstart | Little Red Rover")

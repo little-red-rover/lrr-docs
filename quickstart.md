@@ -1,27 +1,28 @@
 # Quickstart
 
-This guide will get you setup with Little Red Rover, and should take less than an hour. In the end you'll have an autonomous robot running ROS's [NAV2 tools](). 
+This guide will get you setup with Little Red Rover, and should take less than an hour.
 
 ## Unboxing / Assembly
 
 Included in the box you'll find the following:
 
- * One circuit board
- * One LD-20 lidar
- * Two orange wheels
- * Two motors with encoders
- * One 18650 LiIon battery, 5000 mah
- * One 4-pin JST GH 1.25mm straight across cable
- * Two 6-pin JST PH 2.0mm reversed cables
- * An assortment of 3D printed parts
-    - One front skid
-    - Two motor holders
-    - Two motor spacing shims
-    - Two motor attachment shims
-    - Two wheel spacers
- * Three M3-8 machine screws
- * One M2.5 hex wrench
- * One USB-C to C charging cable
+| Item | Picture |
+| ---- | ------- |
+| Circuit board | ![]() |
+| One LD-20 lidar | ![]() |
+| Two orange wheels | ![]() |
+| Two motors with encoders | ![]() |
+| One 18650 LiIon battery, 5000 mah | ![]() |
+| One 4-pin JST GH 1.25mm straight across cable | ![]() |
+| Two 6-pin JST PH 2.0mm reversed cables | ![]() |
+| One front skid | ![]() |
+| Two motor holders | ![]() |
+| Two motor spacing shims | ![]() |
+| Two motor attachment shims | ![]() |
+| Two wheel spacers | ![]() |
+| Three M3-8 machine screws | ![]() |
+| One M2.5 hex wrench | ![]() |
+| One USB-C to C cable | ![]() |
 
 With these parts in hand, you're ready to assembly your robot.
 
