@@ -1,3 +1,3 @@
-# Little Red Docs
+# Little Red Rover Docs
 
-Welcome to the documentation for the Little Red Rover robotics platform.
+Documentation for Little Red Rover.
