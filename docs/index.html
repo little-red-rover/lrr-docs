@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
 
 
@@ -22,18 +22,30 @@
             src: url('./_fonts/Manrope-VariableFont_wght.ttf');
         }
 
-        .cover-main {
-            font-family: 'Randomn4yy', monospace;
+        .alert.callout {
+            border-width: 0 0 0 0.25rem !important;
         }
 
-        .cover-main p {
-            font-size: 1.5em;
+        .sidebar-nav>ul>li {
+            font-weight: 900;
+        }
+
+        .docsify-tabs__tab:hover {
+            cursor: pointer;
+        }
+
+        a.anchor {
+            text-decoration-thickness: 2px !important;
         }
 
         :root {
             --base-background-color: #141414;
+            --sidebar-background: #141414;
 
             --theme-lightness: 100%;
+            --theme-color: #ffffff;
+            --mono-hue: 0;
+            --mono-saturation: 70;
 
             --base-font-family: "Manrope", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             --base-font-size: 16px;
@@ -48,6 +60,10 @@
             --mono-shade2: hsl(var(--mono-hue), var(--mono-saturation), 89%);
             --mono-shade3: hsl(var(--mono-hue), var(--mono-saturation), 97%);
 
+            --search-input-border-width: 0px;
+            --search-input-background-color: #202020;
+            --sidebar-width: 20rem;
+            --sidebar-border-width: 0px;
             --sidebar-name-font-family: 'Randomn4yy', monospace;
             --sidebar-name-font-size: 2.5em;
             --sidebar-nav-link-border-color: transparent;
@@ -59,10 +75,13 @@
             --sidebar-nav-link-text-decoration--active: none;
             --sidebar-nav-link-text-decoration--hover: underline;
 
-            --heading-margin: 0 0 0;
+            --heading-margin: 0 0 0 0;
+            --heading-padding: 0 0 0 0;
             --heading-font-family: 'Randomn4yy', monospace;
             --heading-h1-font-size: 4em;
             --heading-h2-font-size: 2.5em;
+            --heading-h2-padding: 0px;
+            --heading-h2-border-color: #A0A0A0;
             --heading-h3-font-size: var(--font-size-xl);
             --heading-h4-font-size: var(--font-size-l);
             --heading-h5-font-size: var(--font-size-m);
@@ -92,6 +111,9 @@
             },
             subMaxLevel: 2,
             maxLevel: 4,
+            breadcrumb: {
+                size: 'medium'
+            }
         }
     </script>
     <!-- Docsify v4 -->
@@ -105,7 +127,10 @@
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
+    <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+
 </body>
 
 </html>

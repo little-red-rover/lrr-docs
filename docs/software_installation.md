@@ -83,10 +83,29 @@ Next, open the project:
 cd lrr-template-project && code .
 ```
 
-Finally, run the 
+Finally, start the devcontainer (View -> Command Palate -> (type) "Rebuild and Reopen in Container").
+
+> [!INFO]
+> Mac and Windows users, Docker Desktop must be started before opening the container.
+
+The first time building the container will take some time (30+ minutes). This only has to happen once, in the future it will be much quicker.
+
+
+You should now have an open VSCode window running the developement container. 
 
 ## Connecting to the Robot
 
+Power on your rover using the switch on the left side (near the usb port).
+You'll know its turned on when the LiDAR on top starts spinning.
+On boot up, the robot creates a wifi hotspot. Connect your development computer to the network named "little_red_rover".
+
+Open a terminal in your VSCode window (Terminal -> New Terminal) and enter the following command.
+
+```bash
+lrr_connect
+```
+
+Follow the instructions in the terminal to connect the robot to a wifi network.
 
 ## Rock and Roll
 
