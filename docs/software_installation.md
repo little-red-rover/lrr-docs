@@ -4,7 +4,7 @@ This tutorial will take you through the first time software setup for your rover
 
 ## Dependencies
 
-Little Red Rover relies on several pieces of software that must be installed.
+Little Red Rover relies on several pieces of software that must be installed prior to working with the robot.
 
 ### Docker
 
@@ -73,9 +73,25 @@ Follow the [installation instructions](https://git-scm.com/book/en/v2/Getting-St
 Open VSCode, then open a folder where you'd like to store the project (File -> Open Folder).
 Start a new terminal (Terminal -> New Terminal) and run the following command to pull a template project:
 
+<!-- tabs:start -->
+
+#### **ROS2: Humble (Recommended)**
+
 ```bash
 git clone https://github.com/little-red-rover/lrr-template-project
 ```
+
+#### **ROS1: Noetic**
+
+```bash
+git clone https://github.com/little-red-rover/lrr-template-project && checkout noetic
+```
+
+
+<!-- tabs:end -->
+
+> [!INFO]
+> ROS1 is nearing end of life. For new projects, it is highly recommended to use the most recent long term support (LTS) ROS2 distribution.
 
 Next, open the project:
 
@@ -107,20 +123,26 @@ lrr_connect
 
 Follow the instructions in the terminal to connect the robot to a wifi network.
 
-## Rock and Roll
+## Run Teleop
 
-Now that the robot is setup, lets have some fun. To start a demo, run the following commands in your VSCode shell:
-
-To build the ROS2 project:
+In your terminal, run
 
 ```bash
 lrr_build
 ```
 
-To run the demo:
+then
 
 ```bash
 lrr_run
 ```
 
+## Setup Foxglove
+
+Foxglove is a tool we use for visualizing and controlling the rover.
+[Create an account on Foxglove](https://app.foxglove.dev/), then select "Open Connection". In the following popup, leave 'Foxglove Websocket' selected the default value of 'ws://localhost:8765' for the url. Click 'Open'.
+
+In the top right corner, find the button that says 'Layout'. In the drop down, select 'Import From File...' then navigate to '(template project installation path)/tools/lrr_default_layout.json'.
+
 ## Troubleshooting
+

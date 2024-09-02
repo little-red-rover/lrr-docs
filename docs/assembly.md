@@ -1,6 +1,10 @@
 # Kit Assembly
 
-First, make sure you have all of the following materials in your box:
+This tutorial will guide you through assembling your rover. It should take around 15 minutes.
+
+## Bill Of Materials
+
+First, make sure your kit has all the required materials:
 
 | Item | Picture |
 | ---- | ------- |
@@ -20,5 +24,12 @@ First, make sure you have all of the following materials in your box:
 | One M2.5 hex wrench | ![]() |
 | One USB-C to C cable | ![]() |
 
+## Motor Subassembly
 
+## Body Assembly
 
+## First Power On
+
+## Next Steps
+
+Now that you have an assembled robot, head over to the [software setup](/software_installation) page to get the robot moving around!
