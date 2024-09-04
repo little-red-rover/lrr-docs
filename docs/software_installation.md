@@ -1,6 +1,6 @@
 # Software Installation
 
-This tutorial will take you through the first time software setup for your rover. It should take around one hour.
+This tutorial will take you through the first time software setup for your rover. It will require 15 minutes of active time and 45 minutes for downloading / building.
 
 ## Dependencies
 
@@ -145,4 +145,6 @@ Foxglove is a tool we use for visualizing and controlling the rover.
 In the top right corner, find the button that says 'Layout'. In the drop down, select 'Import From File...' then navigate to '(template project installation path)/tools/lrr_default_layout.json'.
 
 ## Troubleshooting
+
+Check out the [troubleshooting page](/troubleshooting).
 

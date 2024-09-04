@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Little Red Rover</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css">
+
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        #terminal {
+            width: 100%;
+            overflow: wrap;
+        }
+
+        @font-face {
+            font-family: 'Randomn4yy';
+            src: url('./_fonts/Randomn4yy-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Manrope';
+            src: url('./_fonts/Manrope-VariableFont_wght.ttf');
+        }
+    </style>
+
+    <script type="module">
+        import {Terminal} from 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm'
+        import {FitAddon} from 'https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/+esm'
+        import {ESPLoader, Transport} from "https://unpkg.com/esptool-js/bundle.js";
+        var term = new Terminal();
+        const fitAddon = new FitAddon();
+        term.loadAddon(fitAddon);
+        term.open(document.getElementById('terminal'));
+        // fitAddon.fit();
+
+        let transport;
+        let device = null;
+        let isConsoleClosed = false;
+
+        consoleStartButton.onclick = async () => {
+            if (device === null) {
+                device = await navigator.serial.requestPort({});
+                transport = new Transport(device, true);
+            }
+
+            await transport.connect(115200);
+            isConsoleClosed = false;
+
+            while (true && !isConsoleClosed) {
+                const val = await transport.rawRead();
+                if (typeof val !== "undefined") {
+                    term.write(val);
+                } else {
+                    break;
+                }
+            }
+            console.log("quitting console");
+        };
+
+        resetButton.onclick = async () => {
+            if (transport) {
+                await transport.setDTR(false);
+                await new Promise((resolve) => setTimeout(resolve, 100));
+                await transport.setDTR(true);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <input type="button" id="consoleStartButton" value="Connect" />
+    <input type="button" id="resetButton" value="Reset" />
+    <div id="terminal"></div>
+</body>
+
+</html>
