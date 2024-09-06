@@ -34,7 +34,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Grab Firmware Binary
-        run: mkdir -p ./docs/_binaries && curl https://github.com/little-red-rover/lrr-firmware/releases/latest/download/lrr-firmware.bin -o ./docs/_binaries/lrr-firmware.bin
+        run: mkdir -p ./docs/_binaries && curl -L https://github.com/little-red-rover/lrr-firmware/releases/latest/download/lrr-firmware.bin -o ./docs/_binaries/lrr-firmware.bin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
