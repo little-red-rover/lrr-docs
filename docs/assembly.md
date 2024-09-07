@@ -27,7 +27,6 @@ In the cable bag:
 | ---- | ---- | ---- |
 | 4-pin JST GH 1.25mm straight across cable | 1 | ![]() |
 | 6-pin JST PH 2.0mm reversed cables | 2 | ![]() |
-| M2.5 hex wrench | 1 | ![]() |
 
 In the small parts bag:
 
@@ -37,13 +36,20 @@ In the small parts bag:
 | Motor spacing shims | 2 | ![]() |
 | Wheel spacers | 2 | ![]() |
 | M3-8 machine screw | 3 | ![]() |
-
+| M2.5 hex wrench | 1 | ![]() |
 
 ## Motor Subassembly
 
 ## Body Assembly
 
 ## First Power On
+
+## Care for Your Rover
+
+> [!WARNING]
+> **Never charge Little Red Rover unattended.**
+>
+> If something goes wrong during the charging process, lithium batteries, like the one contained in the rover, are a serious fire hazard. If the battery becomes hot, smokes, swells, or gives off an odor during charging, immediately stop charging and dipose of the battery safely.
 
 ## Next Steps
 

@@ -12,4 +12,4 @@
     - [Coming soon...](contributing.md)
 * Troubleshooting
     - [Coming soon...](troubleshooting.md)
-    - [Firmware Debugger](firmware_debug.md)
+    - [Firmware Tool](firmware_tool.md)

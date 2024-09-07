@@ -30,18 +30,35 @@
         }
     </style>
 
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
     <script type="module">
         import {Terminal} from 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm'
         import {FitAddon} from 'https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/+esm'
         import {ESPLoader, Transport} from "https://unpkg.com/esptool-js/bundle.js";
+
         var term = new Terminal();
         const fitAddon = new FitAddon();
         term.loadAddon(fitAddon);
         term.open(document.getElementById('terminal'));
-        // fitAddon.fit();
+        fitAddon.fit();
 
         let transport;
+        let esploader;
         let device = null;
+        let chip = null;
+
+        const espLoaderTerminal = {
+            clean() {
+                term.clear();
+            },
+            writeLine(data) {
+                term.writeln(data);
+            },
+            write(data) {
+                term.write(data);
+            },
+        };
+
         let isConsoleClosed = false;
 
         consoleStartButton.onclick = async () => {
@@ -71,10 +88,51 @@
                 await transport.setDTR(true);
             }
         };
+
+        function loadBinaryResource(url) {
+            const req = new XMLHttpRequest();
+            req.open("GET", url, false);
+
+            // XHR binary charset opt by Marcus Granado 2006 [http://mgran.blogspot.com]
+            req.overrideMimeType("text/plain; charset=x-user-defined");
+            req.send(null);
+            return req.status === 200 ? req.responseText : "";
+        }
+
+        programButton.onclick = async () => {
+            if (device === null) {
+                device = await navigator.serial.requestPort({});
+                transport = new Transport(device, true);
+            }
+
+            try {
+                let flashOptions = {
+                    transport,
+                    baudrate: 921600,
+                    terminal: espLoaderTerminal,
+                };
+                esploader = new ESPLoader(flashOptions);
+
+                chip = await esploader.main();
+
+                flashOptions = {
+                    fileArray: [{data: loadBinaryResource("./_binaries/lrr-firmware.bin"), address: 0x0}],
+                    flashSize: "keep",
+                    eraseAll: false,
+                    compress: true,
+                    calculateMD5Hash: (image) => CryptoJS.MD5(CryptoJS.enc.Latin1.parse(image)),
+                };
+                await esploader.writeFlash(flashOptions);
+            } catch (e) {
+                console.error(e);
+                term.writeln(`Error: ${e.message}`);
+            }
+        };
     </script>
 </head>
 
 <body>
+    <input type="button" id="programButton" value="Program" />
     <input type="button" id="consoleStartButton" value="Connect" />
     <input type="button" id="resetButton" value="Reset" />
     <div id="terminal"></div>
