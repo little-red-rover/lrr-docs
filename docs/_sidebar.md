@@ -11,5 +11,5 @@
 * Contributing
     - [Coming soon...](contributing.md)
 * Troubleshooting
-    - [Coming soon...](troubleshooting.md)
+    - [FAQs](faqs.md)
     - [Firmware Tool](firmware_tool.md)

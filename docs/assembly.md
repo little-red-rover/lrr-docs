@@ -27,8 +27,8 @@ In the cable bag:
 
 | Item | Quantity | Picture |
 | ---- | ---- | ---- |
-| 4-pin JST GH 1.25mm straight across cable | 1 | ![Motor cables](./_images/assembly/motor_cables-resize.webp) |
-| 6-pin JST PH 2.0mm reversed cables | 2 | ![Lidar cable](./_images/assembly/lidar_cable-resize.webp) |
+| 4-pin JST GH 1.25mm straight across cable | 1 | ![Motor cables](./_images/assembly/lidar_cable-resize.webp) |
+| 6-pin JST PH 2.0mm reversed cables | 2 | ![Lidar cable](./_images/assembly/motor_cables-resize.webp) |
 
 In the small parts bag:
 
@@ -123,7 +123,7 @@ Congrats! Your robot is assembled!
 ## Care for Your Rover
 
 The rover has a USB C port which you can use to charge the battery.
-Two red status LEDs, directly below charging port, show the charging status.
+Two red LEDs, directly below charging port, show the charging status.
 
 The first LED, labeled CHARGING, lights up when the battery is actively being charged.
 Once the battery is fully charged, this light will turn off.
