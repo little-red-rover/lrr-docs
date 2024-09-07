@@ -73,8 +73,8 @@ Place a motor attachment shim over the parts of the motor mount exposed above th
 Push the attachment shim up and into place, locking the motor into place.
 The hole in the attachment shim should line up with the bolt hole in the circuit board.
 
-<img alt='Attachment shim placed' src='./_images/assembly/attachment_shim_before-resize.webp' width="52%"/>
-<img alt='Attachment shim pushed up' src='./_images/assembly/attachment_shim_after-resize.webp' width="47%"/>
+<img alt='Attachment shim placed' src='./_images/assembly/attachment_shim_before-resize.webp' width="51%"/>
+<img alt='Attachment shim pushed up' src='./_images/assembly/attachment_shim_after-resize.webp' width="46%"/>
 
 Repeat with the other motor.
 
@@ -91,8 +91,8 @@ Insert the LiDAR cable into the bottom of the LiDAR.
 
 Place the LiDAR on top of the circuit board, making sure the cable passes through the hole.
 
-<img alt='LiDAR on top of circuit board' src='./_images/assembly/lidar_on_body-resize.webp' width="49%"/>
-<img alt='Cable coming out the other side' src='./_images/assembly/lidar_cable_below-resize.webp' width="50%"/>
+<img alt='LiDAR on top of circuit board' src='./_images/assembly/lidar_on_body-resize.webp' width="48%"/>
+<img alt='Cable coming out the other side' src='./_images/assembly/lidar_cable_below-resize.webp' width="49%"/>
 
 Using the provided hex key, attach the LiDAR to the rover's body using the bottom two mounting points.
 For now, leave the third screw unattached.
