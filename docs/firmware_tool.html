@@ -61,7 +61,19 @@
 
         let isConsoleClosed = false;
 
-        consoleStartButton.onclick = async () => {
+        async function reset() {
+            if (transport) {
+                await transport.setDTR(false);
+                await new Promise((resolve) => setTimeout(resolve, 100));
+                await transport.setDTR(true);
+            }
+        }
+
+        async function startConsole() {
+            if (transport) {
+                await transport.disconnect();
+                await transport.waitForUnlock(1500);
+            }
             if (device === null) {
                 device = await navigator.serial.requestPort({});
                 transport = new Transport(device, true);
@@ -69,6 +81,8 @@
 
             await transport.connect(115200);
             isConsoleClosed = false;
+
+            reset();
 
             while (true && !isConsoleClosed) {
                 const val = await transport.rawRead();
@@ -78,28 +92,24 @@
                     break;
                 }
             }
+            isConsoleClosed = true;
             console.log("quitting console");
-        };
-
-        resetButton.onclick = async () => {
-            if (transport) {
-                await transport.setDTR(false);
-                await new Promise((resolve) => setTimeout(resolve, 100));
-                await transport.setDTR(true);
-            }
         };
 
         function loadBinaryResource(url) {
             const req = new XMLHttpRequest();
             req.open("GET", url, false);
 
-            // XHR binary charset opt by Marcus Granado 2006 [http://mgran.blogspot.com]
             req.overrideMimeType("text/plain; charset=x-user-defined");
             req.send(null);
             return req.status === 200 ? req.responseText : "";
         }
 
-        programButton.onclick = async () => {
+        async function program() {
+            if (transport) {
+                await transport.disconnect();
+                await transport.waitForUnlock(1500);
+            }
             if (device === null) {
                 device = await navigator.serial.requestPort({});
                 transport = new Transport(device, true);
@@ -127,13 +137,20 @@
                 console.error(e);
                 term.writeln(`Error: ${e.message}`);
             }
+            startConsole();
         };
+
+        consoleStartButton.onclick = startConsole;
+
+        resetButton.onclick = reset;
+
+        programButton.onclick = program;
     </script>
 </head>
 
 <body>
     <input type="button" id="programButton" value="Program" />
-    <input type="button" id="consoleStartButton" value="Connect" />
+    <input type="button" id="consoleStartButton" value="Open Console" />
     <input type="button" id="resetButton" value="Reset" />
     <div id="terminal"></div>
 </body>
