@@ -46,7 +46,7 @@ Insert a motor cable into one of the motors. Note the ridges on the connector, i
 
 ![Cable installed in a motor](./_images/assembly/cable_in_motor-resize.webp)
 
-Take a motor and place it in a motor mount.
+Take the motor and place it in a motor mount.
 
 ![Motor in motor mount](./_images/assembly/motor_in_mount-resize.webp)
 
@@ -60,7 +60,7 @@ Repeat with the other motor, making sure the second assembly is mirrored to the 
 
 ## Body Assembly
 
-At the base of the circuit board, there are cutouts for the motor mount to slot into place.
+There are cutouts for the motor mount in the base of the circuit board.
 Insert the circuit board into the gap...
 
 ![Inserting the circuit board into the motor mount](./_images/assembly/before_mounting_motor-resize.webp)
@@ -70,7 +70,7 @@ Insert the circuit board into the gap...
 ![Guiding the mount up into the board](./_images/assembly/after_mounting_motor-resize.webp)
 
 Place a motor attachment shim over the parts of the motor mount exposed above the board.
-Push the attachment shim up and into place, locking the motor into place.
+Push the attachment shim up and into place, locking in the motor.
 The hole in the attachment shim should line up with the bolt hole in the circuit board.
 
 <img alt='Attachment shim placed' src='./_images/assembly/attachment_shim_before-resize.webp' width="51%"/>
@@ -110,7 +110,7 @@ Use the final screw to attach the front skid.
 <img alt='Front skid before attachment' src='./_images/assembly/front_skid_before-resize.webp' width="48%"/>
 <img alt='Front skid after attachment' src='./_images/assembly/front_skid_after-resize.webp' width="49%"/>
 
-Insert the battery into the back of the rover.
+Insert the battery into the rover.
 Take note of polarity - the positive side of the battery (the end with a bump) goes towards the left.
 
 <img alt='Empty battery holder' src='./_images/assembly/battery_empty-resize.webp' width="50.5%"/>
@@ -127,10 +127,12 @@ Two red status LEDs, directly below charging port, show the charging status.
 
 The first LED, labeled CHARGING, lights up when the battery is actively being charged.
 Once the battery is fully charged, this light will turn off.
+In the following picture, the battery is being charged and is not yet full.
 
 ![Indicator lights during charging](./_images/assembly/charging_lights-resize.webp)
 
 The second LED, labeled PWR GOOD, lights up when a valid power supply is attached.
+In the following picture, a working charger is attached, but the battery is full and no longer charging.
 
 ![Indicator lights when battery is full](./_images/assembly/fully_charged_lights-resize.webp)
 
