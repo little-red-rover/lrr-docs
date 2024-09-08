@@ -110,6 +110,12 @@ Use the final screw to attach the front skid.
 <img alt='Front skid before attachment' src='./_images/assembly/front_skid_before-resize.webp' width="48%"/>
 <img alt='Front skid after attachment' src='./_images/assembly/front_skid_after-resize.webp' width="49%"/>
 
+Place a wheel spacer on each motor's axle.
+Press a wheel on to each axle, making sure its seated as far onto the axle as possible.
+
+<img alt='' src='./_images/assembly/add_wheel_spacer-resize.webp' width="49%"/>
+<img alt='' src='./_images/assembly/add_wheel-resize.webp' width="49%"/>
+
 Insert the battery into the rover.
 Take note of polarity - the positive side of the battery (the end with a bump) goes towards the left.
 
@@ -136,7 +142,7 @@ In the following picture, a working charger is attached, but the battery is full
 
 ![Indicator lights when battery is full](./_images/assembly/fully_charged_lights-resize.webp)
 
-The rover will charge faster when the robot is turned off, but this it isn't required.
+The rover will charge faster when the robot is turned off, but this isn't required.
 
 > [!WARNING]
 > **Never charge Little Red Rover unattended.**
