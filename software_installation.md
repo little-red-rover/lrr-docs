@@ -93,10 +93,9 @@ git clone --recurse-submodules https://github.com/little-red-rover/lrr-template-
 git clone --recurse-submodules https://github.com/little-red-rover/lrr-template-project && checkout noetic
 ```
 
-
 <!-- tabs:end -->
 
-> [!INFO]
+> [!TIP]
 > ROS1 is nearing end of life. For new projects, it is highly recommended to use the most recent long term support (LTS) ROS2 distribution.
 
 Next, open the project:
@@ -119,7 +118,7 @@ You should now have an open VSCode window running the developement container.
 
 Power on your rover using the switch on the left side (near the usb port).
 You'll know its turned on when the LiDAR on top starts spinning.
-On boot up, the robot creates a wifi hotspot. Connect your development computer to the network named "little_red_rover".
+On boot up, the robot creates a wifi hotspot. Connect your development computer to the network named `little_red_rover_xx:xx:xx`, where `xx:xx:xx` are the 24 least significant bits of your rovers MAC address.
 
 Open a terminal in your VSCode window (Terminal -> New Terminal) and enter the following command.
 
@@ -129,26 +128,122 @@ lrr_connect
 
 Follow the instructions in the terminal to connect the robot to a wifi network.
 
+> [!INFO]
+> **Common network pitfalls**
+>
+> * If you're connecting to a network without a password, leave the passphrase blank and hit enter.
+> * As of now, Little Red Rover doesn't support authentication with networks that require a username (notably eduroam, used at universities across the world).
+>   - If your network requires a username, the host will most likely provide a seperate network for IOT devices. Use that network. 
+>   - If you can't find a suitable network, ask your university's IT department how they recommend connecting an IOT device.
+      They may ask for a MAC address, which is `24:0A:C4:XX:XX:XX` with `XX:XX:XX` replaced by the ending of your rover's wifi SSID.
+> * If your network has a captive portal, you'll be able to authenticate through the web browser on your computer.
+>   While connected to the rovers wifi network, open a tab to any website. You'll be redirected to the login page.
+
+> [!TIP]
+> Connect to the wrong network? You can restart the connection process by holding the button labeled RP and restarting your robot. RP is short for reprovision, a term for connecting IOT devices to the network.
+
+Once you connect your robot to wifi, you should be able to browse the internet on your computer while connected to the robot's network. Your rover is acting as a router, and you're accessing the internet through it.
+Whenever you use your rover, stay connected to its wifi network. This is how ROS (running on your computer) communicates with the rover.
+
+
+> [!WARNING]
+> You'll need to reconnect your rover to wifi each time you move to a new location. You'll know the rover needs to be reconnected when the `NETWORKING` status LED turns yellow on power-on.
+
 ## Run Teleop
 
-In your terminal, run
-
-```bash
-lrr_build
-```
-
-then
+In your VSCode terminal, run
 
 ```bash
 lrr_run
 ```
 
+> [!INFO]
+> **Whats going on here?**
+>
+> Astute readers may notice that this is not a ROS command, yet it executes roslaunch to start the teleop nodes. In Linux, this is know as an *alias*, or a console command that has been defined to execute some other command. To see what this alias is actually doing, run
+>
+> ```alias lrr_run```
+>
+> If you're curious, you can also try
+>
+> ```alias lrr_connect```
+>
+>
+> ```alias lrr_install```
+>
+>
+> ```alias lrr_build```
+>
+
 ## Setup Foxglove
 
 Foxglove is a tool we use for visualizing and controlling the rover.
-[Create an account on Foxglove](https://app.foxglove.dev/), then select "Open Connection". In the following popup, leave 'Foxglove Websocket' selected the default value of 'ws://localhost:8765' for the url. Click 'Open'.
+[Create an account on Foxglove](https://app.foxglove.dev/), then select "Open Connection".
 
-In the top right corner, find the button that says 'Layout'. In the drop down, select 'Import From File...' then navigate to '(template project installation path)/tools/lrr_default_layout.json'.
+![](./_images/software_installation/open_connection.png)
+
+In the following popup, leave 'Foxglove Websocket' selected the default value of 'ws://localhost:8765' for the url. Click 'Open'.
+
+![](./_images/software_installation/open_connection_popup.png)
+
+In the top right corner, find the button that says 'Layout'. In the drop down, select 'Import From File...' then navigate to `(template project installation path)/tools/lrr_default_layout.json`.
+
+![](./_images/software_installation/import_layout.png)
+
+> [!TIP]
+> Beta students, the layout file will be in the folder for each homework.
+
+If all went well, you should see something like the following:
+
+![](./_images/software_installation/layout_applied.png)
+
+In the center is a model of the rover. The colorful dots are a laser scan from the LiDAR.
+Try picking up the rover and moving it around, you should see the LiDAR readings change in real time.
+
+Now is a great chance to play around with Foxglove.
+Add some panels, change some settings, plot some values, see what you can do.
+If you mess something up and want to return to the origional layout, just click revert:
+
+![](./_images/software_installation/revert.png)
+
+## Lets Get Rolling!
+
+Time to get the rover driving around!
+Before you continue, place your rover on the ground and away from people.
+
+Back in VSCode, you should still have `lrr_run` running in one terminal.
+Open a second terminal (the plus sign in the upper right of the terminal window) and run the following command:
+
+<!-- tabs:start -->
+
+#### **Hardware Beta Testers**
+
+```bash
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.2 _turn:=2.0 _key_timeout:=0.6
+```
+
+#### **ROS2: Humble (Recommended)**
+
+Comming soon...
+
+#### **ROS1: Noetic**
+
+```bash
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.2 _turn:=2.0 _key_timeout:=0.6
+```
+
+<!-- tabs:end -->
+
+Follow the instructions in the terminal to control your rover. To speed things up, try tweaking the parameters in the command.
+Little Red Rover can go *much* faster than what I've started you out with.
+
+After playing around a bit, you may find the controls a bit clunky.
+Worry not! We'll fix this in the next tutorial, and even cover how to use a controller.
+
+> [!INFO]
+> **Whats going on here?**
+>
+> This command runs a node that converts key presses into a [ROS Twist message](https://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Twist.html). This message it published on the topic `/cmd_vel`, where the rover is subscribed for teleop commands. Several parameters are passed, adjusting the linear and angular speeds to be appropriate for the robot. We also pass the `_key_timeout` parameter, which makes the rover stop whenever you let go of the keys.
 
 ## Troubleshooting
 
