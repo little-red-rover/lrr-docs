@@ -100,9 +100,27 @@ git clone --recurse-submodules https://github.com/little-red-rover/lrr-template-
 
 Next, open the project:
 
+<!-- tabs:start -->
+
+#### **Hardware Beta Testers**
+
+```bash
+cd lrr-fa24-beta && code .
+```
+
+#### **ROS2: Humble (Recommended)**
+
 ```bash
 cd lrr-template-project && code .
 ```
+
+#### **ROS1: Noetic**
+
+```bash
+cd lrr-template-project && code .
+```
+
+<!-- tabs:end -->
 
 Finally, start the devcontainer (View -> Command Palate -> (type) "Rebuild and Reopen in Container").
 
