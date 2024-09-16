@@ -78,7 +78,7 @@ Start a new terminal (Terminal -> New Terminal) and run the following command to
 #### **Hardware Beta Testers**
 
 ```bash
-git clone --recurse-submodules https://github.com/little-red-rover/lrr-fa24-beta.git
+git clone --recurse-submodules https://github.com/empriselab/lrr-fa24-beta.git
 ```
 
 #### **ROS2: Humble (Recommended)**
@@ -98,37 +98,12 @@ git clone --recurse-submodules https://github.com/little-red-rover/lrr-template-
 > [!TIP]
 > ROS1 is nearing end of life. For new projects, it is highly recommended to use the most recent long term support (LTS) ROS2 distribution.
 
-Next, open the project:
-
-<!-- tabs:start -->
-
-#### **Hardware Beta Testers**
-
-```bash
-cd lrr-fa24-beta && code .
-```
-
-#### **ROS2: Humble (Recommended)**
-
-```bash
-cd lrr-template-project && code .
-```
-
-#### **ROS1: Noetic**
-
-```bash
-cd lrr-template-project && code .
-```
-
-<!-- tabs:end -->
-
-Finally, start the devcontainer (View -> Command Palate -> (type) "Rebuild and Reopen in Container").
+Next, open the project in VSCode (File -> Open Folder -> (chose the folder you just cloned) and start the devcontainer (View -> Command Palate -> (type) "Rebuild and Reopen in Container").
 
 > [!INFO]
 > Mac and Windows users, Docker Desktop must be started before opening the container.
 
 The first time building the container will take some time (30+ minutes). This only has to happen once, in the future it will be much quicker.
-
 
 You should now have an open VSCode window running the developement container. 
 
