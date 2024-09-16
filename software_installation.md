@@ -212,7 +212,8 @@ Time to get the rover driving around!
 Before you continue, place your rover on the ground and away from people.
 
 Back in VSCode, you should still have `lrr_run` running in one terminal.
-Open a second terminal (the plus sign in the upper right of the terminal window) and run the following command:
+Open a second terminal (the plus sign in the upper right of the terminal window) and run the following command.
+Follow the instructions in the terminal to control your rover.
 
 <!-- tabs:start -->
 
@@ -234,16 +235,21 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.2 _turn:=2.0 _ke
 
 <!-- tabs:end -->
 
-Follow the instructions in the terminal to control your rover. To speed things up, try tweaking the parameters in the command.
-Little Red Rover can go *much* faster than what I've started you out with.
-
-After playing around a bit, you may find the controls a bit clunky.
-Worry not! We'll fix this in the next tutorial, and even cover how to use a controller.
-
 > [!INFO]
 > **Whats going on here?**
 >
-> This command runs a node that converts key presses into a [ROS Twist message](https://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Twist.html). This message it published on the topic `/cmd_vel`, where the rover is subscribed for teleop commands. Several parameters are passed, adjusting the linear and angular speeds to be appropriate for the robot. We also pass the `_key_timeout` parameter, which makes the rover stop whenever you let go of the keys.
+> This command runs a node that converts key presses into a [ROS Twist message](https://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Twist.html). This message it published on the topic `/cmd_vel`, where the rover is subscribed for teleop commands. In a third terminal, try running this command to see what the node is outputting:
+> 
+> ```rostopic echo /cmd_vel``` 
+>
+> Several parameters are passed, adjusting the linear and angular speeds to be appropriate for the robot. We also pass the `_key_timeout` parameter, which makes the rover stop whenever you let go of the keys.
+
+> [!TIP]
+> To speed things up, try tweaking the parameters in the command.
+> Little Red Rover can go *much* faster than what I've started you out with.
+
+After playing around a bit, you may find the controls a bit clunky.
+Worry not! We'll fix this in the next tutorial, and even cover how to use a controller.
 
 ## Troubleshooting
 
