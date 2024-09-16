@@ -218,6 +218,11 @@ If all went well, you should see something like the following:
 In the center is a model of the rover. The colorful dots are a laser scan from the LiDAR.
 Try picking up the rover and moving it around, you should see the LiDAR readings change in real time.
 
+> [!WARNING]
+> If LiDAR data doesn't appear, the robot is probably having trouble communicating with your computer.
+> Little Red Rover uses UDP port 8001, make sure this port is allowed through your firewall.
+> Instructions vary with operating system, try googling "allow UDP port through firewall".
+
 Now is a great chance to play around with Foxglove.
 Add some panels, change some settings, plot some values, see what you can do.
 If you mess something up and want to return to the origional layout, just click revert:
