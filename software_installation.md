@@ -78,19 +78,19 @@ Start a new terminal (Terminal -> New Terminal) and run the following command to
 #### **Hardware Beta Testers**
 
 ```bash
-git clone --recurse-submodules https://github.com/empriselab/lrr-fa24-beta.git
+git clone --recurse-submodules --config core.autocrlf=input https://github.com/empriselab/lrr-fa24-beta.git
 ```
 
 #### **ROS2: Humble (Recommended)**
 
 ```bash
-git clone --recurse-submodules https://github.com/little-red-rover/lrr-template-project
+git clone --recurse-submodules --config core.autocrlf=input https://github.com/little-red-rover/lrr-template-project
 ```
 
 #### **ROS1: Noetic**
 
 ```bash
-git clone --recurse-submodules https://github.com/little-red-rover/lrr-template-project && checkout noetic
+git clone --recurse-submodules --config core.autocrlf=input https://github.com/little-red-rover/lrr-template-project && checkout noetic
 ```
 
 <!-- tabs:end -->
