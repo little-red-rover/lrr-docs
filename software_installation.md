@@ -134,7 +134,7 @@ Follow the instructions in the terminal to connect the robot to a wifi network.
 >   - If you can't find a suitable network, ask your university's IT department how they recommend connecting an IOT device.
       They may ask for a MAC address, which is `24:0A:C4:XX:XX:XX` with `XX:XX:XX` replaced by the ending of your rover's wifi SSID.
 > * If your network has a captive portal, you'll be able to authenticate through the web browser on your computer.
->   While connected to the rovers wifi network, open a tab to any website. You'll be redirected to the login page.
+>   While connected to the rovers wifi network, open [this link](http://example.com). You'll be redirected to the login page.
 
 > [!TIP]
 > Connect to the wrong network? You can restart the connection process by holding the button labeled RP and restarting your robot. RP is short for reprovision, a term for connecting IOT devices to the network.
