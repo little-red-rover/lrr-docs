@@ -4,9 +4,10 @@
 * Tutorials
     - [Comming soon...](tutorials.md)
 * System Documentation
-    - [ROS Drivers - Coming soon...](ros_drivers.md)
-    - [Firmware - Coming soon...](firmware.md)
+    - [Overview](system_overview.md)
     - [Hardware - Coming soon...](hardware.md)
+    - [Firmware - Coming soon...](firmware.md)
+    - [ROS Drivers - Coming soon...](ros_drivers.md)
     - [Hardware Sourcing Guide - Coming soon...](hardware_sourcing.md)
 * Contributing
     - [Coming soon...](contributing.md)
