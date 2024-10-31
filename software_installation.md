@@ -8,7 +8,7 @@ Little Red Rover relies on several pieces of software that must be installed pri
 
 ### Docker
 
-Little Red Rover uses Docker as a compatability layer with your host operating system.
+Little Red Rover uses Docker as a compatibility layer with your host operating system.
 
 <!-- tabs:start -->
 
@@ -27,7 +27,7 @@ Follow the [installation instructions](https://docs.docker.com/desktop/install/l
 
 ### VSCode
 
-To make working with Docker painless, its recommended to use the devcontainers feature of the VSCode. First, download VSCode if you don't have it installed already.
+To make working with Docker painless, it's recommended to use the devcontainers feature of the VSCode. First, download VSCode if you don't have it installed already.
 
 <!-- tabs:start -->
 
@@ -69,7 +69,7 @@ Follow the [installation instructions](https://git-scm.com/book/en/v2/Getting-St
 
 > [!INFO]
 > As of now, cloning over https is not supported.
-> If you haven't already, please [follow the instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=windows) for adding an SSH key to your github account.
+> If you haven't already, please [follow the instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=windows) for adding an SSH key to your GitHub account.
 
 
 ## Setting Up Your Development Environment
@@ -102,28 +102,28 @@ git clone --recurse-submodules git@github.com:little-red-rover/lrr-template-proj
 > [!TIP]
 > ROS1 is nearing end of life. For new projects, it is highly recommended to use the most recent long term support (LTS) ROS2 distribution.
 
-Next, open the project in VSCode (File -> Open Folder -> (chose the folder you just cloned) and start the devcontainer (View -> Command Palate -> (type) "Rebuild and Reopen in Container").
+Next, open the project in VSCode (File → Open Folder → (chose the folder you just cloned)) and start the devcontainer (View → Command Palate → (type) "Rebuild and Reopen in Container").
 
 > [!INFO]
 > Mac and Windows users, Docker Desktop must be started before opening the container.
 
 The first time building the container will take some time (30+ minutes). This only has to happen once, in the future it will be much quicker.
 
-You should now have an open VSCode window running the developement container. 
+You should now have an open VSCode window running the development container. 
 
 ## Connecting to the Robot
 
-Power on your rover using the switch on the left side (near the usb port).
-You'll know its turned on when the LiDAR on top starts spinning.
-On boot up, the robot creates a wifi hotspot. Connect your development computer to the network named `little_red_rover_xx:xx:xx`, where `xx:xx:xx` are the 24 least significant bits of your rovers MAC address.
+Power on your rover using the switch on the left side (near the USB port).
+You'll know it's turned on when the LiDAR on top starts spinning.
+On boot up, the robot creates a Wi-Fi hotspot. Connect your development computer to the network named `little_red_rover_xx:xx:xx`, where `xx:xx:xx` is a hexadecimal string unique to your rover.
 
-Open a terminal in your VSCode window (Terminal -> New Terminal) and enter the following command.
+Open a terminal in your VSCode window (Terminal → New Terminal) and enter the following command.
 
 ```bash
 lrr_connect
 ```
 
-Follow the instructions in the terminal to connect the robot to a wifi network.
+Follow the instructions in the terminal to connect the robot to a Wi-Fi network.
 
 > [!INFO]
 > **Common network pitfalls**
@@ -132,19 +132,18 @@ Follow the instructions in the terminal to connect the robot to a wifi network.
 > * As of now, Little Red Rover doesn't support authentication with networks that require a username (notably eduroam, used at universities across the world).
 >   - If your network requires a username, the host will most likely provide a seperate network for IOT devices. Use that network. 
 >   - If you can't find a suitable network, ask your university's IT department how they recommend connecting an IOT device.
-      They may ask for a MAC address, which is `24:0A:C4:XX:XX:XX` with `XX:XX:XX` replaced by the ending of your rover's wifi SSID.
 > * If your network has a captive portal, you'll be able to authenticate through the web browser on your computer.
->   While connected to the rovers wifi network, open [this link](http://example.com). You'll be redirected to the login page.
+>   While connected to the rovers Wi-Fi network, open [this link](http://example.com). You'll be redirected to the login page.
 
 > [!TIP]
-> Connect to the wrong network? You can restart the connection process by holding the button labeled RP and restarting your robot. RP is short for reprovision, a term for connecting IOT devices to the network.
+> Connect to the wrong network? You can restart the connection process by holding the button labeled RP and restarting your robot. RP is short for re-provision, a term for connecting IOT devices to the network.
 
-Once you connect your robot to wifi, you should be able to browse the internet on your computer while connected to the robot's network. Your rover is acting as a router, and you're accessing the internet through it.
-Whenever you use your rover, stay connected to its wifi network. This is how ROS (running on your computer) communicates with the rover.
+Once you connect your robot to Wi-Fi, you should be able to browse the internet on your computer while connected to the robot's network. Your rover is acting as a router, and you're accessing the internet through it.
+Whenever you use your rover, stay connected to its Wi-Fi network. This is how ROS (running on your computer) communicates with the rover.
 
 
 > [!WARNING]
-> You'll need to reconnect your rover to wifi each time you move to a new location. You'll know the rover needs to be reconnected when the `NETWORKING` status LED turns yellow on power-on.
+> You'll need to reconnect your rover to Wi-Fi each time you move to a new location. You'll know the rover needs to be reconnected when the `NETWORKING` status LED turns yellow on power-on.
 
 ## Run Teleop
 
@@ -155,9 +154,9 @@ lrr_run
 ```
 
 > [!INFO]
-> **Whats going on here?**
+> **What's going on here?**
 >
-> Astute readers may notice that this is not a ROS command, yet it executes roslaunch to start the teleop nodes. In Linux, this is know as an *alias*, or a console command that has been defined to execute some other command. To see what this alias is actually doing, run
+> Astute readers may notice that this is not a ROS command, yet it executes `roslaunch` to start the teleop nodes. This is known as an *alias*, or a console command that has been defined to execute some other command. To see what this alias is actually doing, run
 >
 > ```alias lrr_run```
 >
@@ -179,11 +178,11 @@ Foxglove is a tool we use for visualizing and controlling the rover.
 
 ![](./_images/software_installation/open_connection.png)
 
-In the following popup, leave 'Foxglove Websocket' selected the default value of 'ws://localhost:8765' for the url. Click 'Open'.
+In the following popup, leave 'Foxglove Websocket' selected the default value of 'ws://localhost:8765' for the URL. Click 'Open'.
 
 ![](./_images/software_installation/open_connection_popup.png)
 
-In the top right corner, find the button that says 'Layout'. In the drop down, select 'Import From File...' then navigate to `(template project installation path)/tools/lrr_default_layout.json`.
+In the top right corner, find the button that says 'Layout'. In the drop-down, select 'Import From File...' then navigate to `(template project installation path)/tools/lrr_default_layout.json`.
 
 ![](./_images/software_installation/import_layout.png)
 
@@ -199,16 +198,16 @@ Try picking up the rover and moving it around, you should see the LiDAR readings
 
 > [!WARNING]
 > If LiDAR data doesn't appear, the robot is probably having trouble communicating with your computer.
-> Little Red Rover uses UDP port 8001, make sure this port is allowed through your firewall.
-> Instructions vary with operating system, try googling "allow UDP port through firewall".
+> Little Red Rover uses TCP port 8001, make sure this port is allowed through your firewall.
+> Instructions vary with operating system, try googling "allow TCP port through firewall".
 
 Now is a great chance to play around with Foxglove.
 Add some panels, change some settings, plot some values, see what you can do.
-If you mess something up and want to return to the origional layout, just click revert:
+If you mess something up and want to return to the original layout, just click revert:
 
 ![](./_images/software_installation/revert.png)
 
-## Lets Get Rolling!
+## Let's Get Rolling!
 
 Time to get the rover driving around!
 Before you continue, place your rover on the ground and away from people.
@@ -227,7 +226,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.2 _turn:=2.0 _ke
 
 #### **ROS2: Humble (Recommended)**
 
-Comming soon...
+Coming soon...
 
 #### **ROS1: Noetic**
 
@@ -238,7 +237,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.2 _turn:=2.0 _ke
 <!-- tabs:end -->
 
 > [!INFO]
-> **Whats going on here?**
+> **What's going on here?**
 >
 > This command runs a node that converts key presses into a [ROS Twist message](https://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Twist.html). This message it published on the topic `/cmd_vel`, where the rover is subscribed for teleop commands. In a third terminal, try running this command to see what the node is outputting:
 > 

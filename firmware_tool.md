@@ -6,4 +6,7 @@ To flash it with the newest firmware, click 'Program'. To open a console click '
 
 For either option, you'll be asked to select a serial device. Chose the option that says 'USB JTAG / serial debug unit'.
 
-[firmware tool](/firmware_tool.html ':include :type=iframe width=100% height=500px')
+> [!NOTE]
+> The firmware tool only works on Google Chrome.
+
+[Firmware tool](/firmware_tool.html ':include :type=iframe width=100% height=500px')
